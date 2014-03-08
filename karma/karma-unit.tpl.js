@@ -34,8 +34,9 @@ module.exports = function ( karma ) {
 	},
 
 	coverageReporter: {
-	  type : 'html',
-	  dir : 'coverage/'
+	  type : 'cobertura',
+	  dir : 'coverage/',
+          file: 'coverage.xml'
 	},
 
     /**
