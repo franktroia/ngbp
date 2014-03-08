@@ -33,10 +33,10 @@ module.exports = function ( karma ) {
 	    outputFile: 'reports/test/test-results.xml'
 	},
 
-	coverageReporter = {
+	coverageReporter: {
 	  type : 'html',
 	  dir : 'coverage/'
-	}
+	},
 
     /**
      * On which port should the browser connect, on which port is the test runner
