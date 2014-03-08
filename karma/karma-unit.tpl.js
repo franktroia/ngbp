@@ -18,19 +18,25 @@ module.exports = function ( karma ) {
       'src/assets/**/*.js'
     ],
     frameworks: [ 'jasmine' ],
-    plugins: [ 'karma-jasmine', 'karma-junit-reporter', 'karma-firefox-launcher', 'karma-chrome-launcher', 'karma-phantomjs-launcher', 'karma-coffee-preprocessor' ],
+    plugins: [ 'karma-jasmine', 'karma-junit-reporter', 'karma-firefox-launcher', 'karma-chrome-launcher', 'karma-phantomjs-launcher', 'karma-coffee-preprocessor', 'karma-coverage'],
     preprocessors: {
       '**/*.coffee': 'coffee',
+      'src/**/*.js': 'coverage'
     },
 
     /**
      * How to report, by default.
      */
-    reporters: ['dots', 'junit'],
+    reporters: ['dots', 'junit', 'coverage'],
 
 	junitReporter: {
 	    outputFile: 'reports/test/test-results.xml'
 	},
+
+	coverageReporter = {
+	  type : 'html',
+	  dir : 'coverage/'
+	}
 
     /**
      * On which port should the browser connect, on which port is the test runner
